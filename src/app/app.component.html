@@ -1,0 +1,8 @@
+<div class="container">
+
+  <div class="addTask">
+    <input  type="text" (input)="onTaskChange($event)" placeholder="Add Task"  >
+    <button (click)="onAddTask()" >Add</button>
+  </div>
+  <app-tasks [tasks]="tasks" (deletedTask)="onDeleteTask($event)" (updatedTask) ="onUpdateTask($event)"  ></app-tasks>
+</div>

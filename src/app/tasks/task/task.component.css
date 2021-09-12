@@ -1,0 +1,36 @@
+#task{
+
+    padding: 5px;
+    background-color: antiquewhite;
+    margin: 2px;
+    text-align: left;
+   
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+   
+
+}
+
+#title{
+    grid-column-start: 1;
+    grid-column-end: 8;
+    flex-wrap: wrap;
+}
+
+#update{
+    display: flex;
+}
+#edit{
+    grid-column-start: 10;
+    grid-column-end: 11;
+}
+
+#complete{
+    grid-column-start: 11;
+    grid-column-end: 12;
+}
+
+#edit button , #complete button{
+
+    width: 95%;
+}
