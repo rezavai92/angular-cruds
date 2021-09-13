@@ -10,6 +10,7 @@ export class TasksComponent implements OnInit {
     @Input() tasks : Task []=[];
 
     @Output() deletedTask = new EventEmitter<string>();
+    @Output() completedTask = new EventEmitter<string>();
     @Output() updatedTask = new EventEmitter<Task>();
   constructor() { 
 
@@ -31,4 +32,9 @@ export class TasksComponent implements OnInit {
     this.updatedTask.emit(task)
   }
 
+
+  onCompleteTask(id : string){
+
+    this.completedTask.emit(id)
+  }
 }

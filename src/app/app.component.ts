@@ -11,6 +11,7 @@ export class AppComponent {
   public  tasks : Task[]=[];
   public title : string="" ;
 
+   
   generateId (){
 
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
@@ -34,6 +35,7 @@ export class AppComponent {
     let newTask  : Task={
       id : this.generateId(),
       title : this.title,
+      isCompleted : false
     
     }
 
@@ -43,7 +45,21 @@ export class AppComponent {
   //  console.log(this.tasks)
   }
 
+ // complete Task
 
+  onCompleteTask(id : string){
+
+    let existingTasks = [...this.tasks];
+
+    const found = existingTasks.findIndex((t)=>{
+      return t.id===id;
+    });
+
+    existingTasks[found].isCompleted= !existingTasks[found].isCompleted;
+
+    this.tasks=existingTasks;
+    console.log(this.tasks)
+  }
   // delete Task
 
   onDeleteTask (id : string){

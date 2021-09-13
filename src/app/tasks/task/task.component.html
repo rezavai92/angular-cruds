@@ -1,16 +1,20 @@
 <div id="task" >
 
 
-    <div id="title" *ngIf="!updateMode" > {{title}}</div>
+    <div id="title" *ngIf="!updateMode" [ngStyle] ="{textDecoration :  getTextDecoration() }" > {{title}}</div>
     <div id="update"  *ngIf="updateMode" >
         <input type="text" [(ngModel)]="updatedTitle" >
         <button (click)="onUpdateTask()" >save</button>
     </div>
   
    <div id="edit">
-        <button (click)="onEdit()" >Edit</button>
+        <button  (click)="onEdit()" >Edit</button>
    </div>
    <div id="complete">
-       <button>Complete</button>
+       <button (click)="onCompleteTask()" >{{getCompleteButtonText()}}</button>
+   </div>
+
+   <div id="delete">
+       <button (click)="onDeleteTask()" >Delete</button>
    </div>
 </div>
